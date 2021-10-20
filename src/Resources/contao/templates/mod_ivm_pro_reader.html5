@@ -1,0 +1,88 @@
+<div class="<?= $this->class ?> block"<?= $this->cssID ?><?php if ($this->style): ?> style="<?= $this->style ?>"<?php endif; ?>>
+  <?php if ($this->unit): ?>
+
+    <h2>
+      <?php if ($this->unit['exposetitle']): ?>
+        <?= $this->unit['exposetitle'] ?>
+      <?php else: ?>
+        <?= $this->unit['street'] ?><?php if ($this->unit['district_name']): ?>, <?= $this->unit['district_name'] ?><?php endif; ?><?php if ($this->unit['city']): ?>, <?= $this->unit['city'] ?><?php endif; ?>
+      <?php endif; ?>
+    </h2>
+
+    <?php if ($this->unit['image']): ?>
+      <figure>
+        <img src="<?= $this->unit['image'] ?>" alt="<?= $this->unit['flat_image_titel'] ?>">
+      </figure>
+    <?php endif; ?>
+
+    <dl>
+      <?php foreach ([
+        'keynumber',
+        'street',
+        'zip',
+        'city',
+        'district_name',
+        'floor',
+        'direction',
+        'rooms',
+        'space',
+        'date',
+        'rent',
+        'charges',
+        'heating',
+        'deposit',
+        'enev_ausweisart',
+        'enev_verbrauchswert',
+        'lights',
+        'year',
+        'energyconsumption',
+        'enev_gueltig_bis'
+      ] as $basicProperty): ?>
+        <?php if ($this->unit[$basicProperty]): ?>
+          <dt><?= $this->trans('IVMPRO.unit.' . $basicProperty) ?></dt>
+          <dd><?= $this->unit[$basicProperty] ?></dd>
+        <?php endif; ?>
+      <?php endforeach; ?>
+    </dl>
+
+    <?php if ($this->unit['objectdescription']): ?>
+      <h3><?= $this->trans('IVMPRO.unit.objectdescription') ?></h3>
+      <?= $this->unit['objectdescription'] ?>
+    <?php endif; ?>
+
+    <?php if ($this->unit['environmet']): ?>
+      <h3><?= $this->trans('IVMPRO.unit.environmet') ?></h3>
+      <ul>
+        <?php foreach ($this->unit['environmet'] as $feature): ?>
+          <li><?= $feature ?></li>
+        <?php endforeach; ?>
+      </ul>
+    <?php endif; ?>
+
+    <?php if ($this->unit['district_description']): ?>
+      <h3><?= $this->trans('IVMPRO.unit.district_description') ?></h3>
+      <?= $this->unit['district_description'] ?>
+    <?php endif; ?>
+
+    <?php if ($this->unit['gallery_img']): ?>
+      <h3><?= $this->trans('IVMPRO.unit.gallery_img') ?></h3>
+      <ul>
+        <?php foreach ($this->unit['gallery_img'] as $img): ?>
+          <li>
+            <figure><img src="<?= $img['url'] ?>" alt="<?= $img['info_text'] ?>"></figure>
+          </li>
+        <?php endforeach; ?>
+      </ul>
+    <?php endif; ?>
+
+    <?php if ($this->unit['plot']): ?>
+      <h3><?= $this->trans('IVMPRO.unit.plot') ?></h3>
+      <figure>
+        <img src="<?= $this->unit['plot'] ?>" alt="<?= $this->trans('IVMPRO.unit.plot') ?>">
+      </figure>
+    <?php endif; ?>
+
+  <?php else: ?>
+    <?php /* TODO */ ?>
+  <?php endif; ?>
+</div>

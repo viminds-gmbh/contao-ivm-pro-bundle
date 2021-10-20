@@ -1,0 +1,23 @@
+<div class="<?= $this->class ?> block"<?= $this->cssID ?><?php if ($this->style): ?> style="<?= $this->style ?>"<?php endif; ?>>
+  <?php if ($this->units): ?>
+    <?php foreach ($this->units as $unit): ?>
+      <section>
+        <h2>
+          <?php if ($unit['exposetitle']): ?>
+            <?= $unit['exposetitle'] ?>
+          <?php else: ?>
+            <?= $unit['street'] ?><?php if ($unit['district_name']): ?>, <?= $unit['district_name'] ?><?php endif; ?><?php if ($unit['city']): ?>, <?= $unit['city'] ?><?php endif; ?>
+          <?php endif; ?>
+        </h2>
+        <?php if ($unit['image']): ?>
+          <figure>
+            <img src="<?= $unit['image'] ?>" alt="<?= $unit['flat_image_titel'] ?>">
+          </figure>
+        <?php endif; ?>
+        <a href="<?= $unit['readerHref'] ?>">Details</a>
+      </section>
+    <?php endforeach; ?>
+  <?php else: ?>
+    <?php /* TODO */ ?>
+  <?php endif; ?>
+</div>

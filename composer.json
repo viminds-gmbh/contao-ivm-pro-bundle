@@ -1,0 +1,47 @@
+{
+    "name": "qbus/contao-ivm-pro-bundle",
+    "type": "contao-bundle",
+    "description": "Provide and interact with IVM Professional real estate listings on a Contao website",
+    "homepage": "https://www.qbus.de",
+    "license": "LGPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Alex Wuttke",
+            "email": "alw@qbus.de"
+        }
+    ],
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "contao/core-bundle": "^4.9",
+        "symfony/config": "^4.4 || ^5.1",
+        "symfony/dependency-injection": "^4.4 || ^5.1",
+        "symfony/http-kernel": "^4.4 || ^5.1",
+        "qbus/ivm-pro-client-contao-manager-plugin": "^0.1.0"
+    },
+    "conflict": {
+        "contao/manager-plugin": "<2.0 || >=3.0"
+    },
+    "require-dev": {
+        "contao/manager-plugin": "^2.0",
+        "contao/easy-coding-standard": "^3.0",
+        "phpunit/phpunit": "^8.4",
+        "symfony/phpunit-bridge": "^4.4 || ^5.1"
+    },
+    "extra": {
+        "contao-manager-plugin": "Qbus\\IvmProBundle\\ContaoManager\\Plugin"
+    },
+    "autoload": {
+        "psr-4": {
+            "Qbus\\IvmProBundle\\": "src/"
+        }
+    },
+    "support": {
+        "issues": "https://github.com/qbus/contao-ivm-pro-bundle/issues",
+        "source": "https://github.com/qbus/contao-ivm-pro-bundle"
+    },
+    "scripts": {
+        "cs-fixer": [
+            "vendor/bin/ecs check src/ tests/ --fix --ansi"
+        ]
+    }
+}

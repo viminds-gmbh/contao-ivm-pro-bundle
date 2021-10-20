@@ -1,0 +1,24 @@
+services:
+    _defaults:
+        autoconfigure: true
+
+    Qbus\IvmProBundle\Controller\FrontendModule\IvmProListController:
+        arguments:
+            - "@ivm_pro_client.repository.unit"
+            - "%ivm_pro_client.subdomain%"
+        tags:
+            - { name: contao.frontend_module, category: miscellaneous }
+
+    Qbus\IvmProBundle\Controller\FrontendModule\IvmProReaderController:
+        arguments:
+            - "@ivm_pro_client.repository.unit"
+            - "%ivm_pro_client.subdomain%"
+        tags:
+            - { name: contao.frontend_module, category: miscellaneous }
+
+    Qbus\IvmProBundle\Controller\FrontendModule\IvmProFilterController:
+        arguments:
+            - "@ivm_pro_client.api_client"
+            - "@contao.translation.translator"
+        tags:
+            - { name: contao.frontend_module, category: miscellaneous }

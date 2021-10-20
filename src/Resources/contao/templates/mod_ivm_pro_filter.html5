@@ -1,0 +1,22 @@
+<div class="<?= $this->class ?> block"<?= $this->cssID ?><?php if ($this->style): ?> style="<?= $this->style ?>"<?php endif; ?>>
+  <?php foreach (['districts', 'rooms', 'floors'] as $filter): ?>
+    <?php if ($this->$filter): ?>
+      <h3><?= $this->trans('IVMPRO.filter.' . $filter) ?></h3>
+      <ul>
+        <?php foreach ($this->$filter as $href => $data): ?>
+          <li>
+            <a href="<?= $href ?>">
+              <?php if ($data['active']): ?>
+                <strong>
+              <?php endif; ?>
+                <?= $data['label'] ?>
+              <?php if ($data['active']): ?>
+                </strong>
+              <?php endif; ?>
+            </a>
+          </li>
+        <?php endforeach; ?>
+      </ul>
+    <?php endif; ?>
+  <?php endforeach; ?>
+</div>
