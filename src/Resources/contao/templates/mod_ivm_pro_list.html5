@@ -14,7 +14,9 @@
             <img src="<?= $unit['image'] ?>" alt="<?= $unit['flat_image_titel'] ?>">
           </figure>
         <?php endif; ?>
-        <a href="<?= $unit['readerHref'] ?>">Details</a>
+        <?php if ($unit['readerHref']): ?>
+          <a href="<?= $unit['readerHref'] ?>">Details</a>
+        <?php endif; ?>
       </section>
     <?php endforeach; ?>
   <?php else: ?>

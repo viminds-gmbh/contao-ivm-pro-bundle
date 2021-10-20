@@ -75,7 +75,7 @@ class IvmProListController extends AbstractFrontendModuleController
                 $units[$key]['image'] = $ivmUrl.'/_img/flats/'.$units[$key]['image'];
             }
 
-            $units[$key]['readerHref'] = $readerPage->getFrontendUrl('/'.$units[$key]['id']);
+            $units[$key]['readerHref'] = $readerPage !== null ? $readerPage->getFrontendUrl('/'.$units[$key]['id']) : '';
         }
         $template->units = $units;
 
