@@ -31,7 +31,7 @@ class IvmProReaderController extends AbstractFrontendModuleController
         $this->subdomain = $subdomain;
     }
 
-    protected function getResponse(Template $template, ModuleModel $model, Request $request): ?Response
+    protected function getResponse(Template $template, ModuleModel $model, Request $request): Response
     {
         $id = Input::get('auto_item');
 

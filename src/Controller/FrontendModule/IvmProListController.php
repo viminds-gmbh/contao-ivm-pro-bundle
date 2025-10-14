@@ -32,7 +32,7 @@ class IvmProListController extends AbstractFrontendModuleController
         $this->subdomain = $subdomain;
     }
 
-    protected function getResponse(Template $template, ModuleModel $model, Request $request): ?Response
+    protected function getResponse(Template $template, ModuleModel $model, Request $request): Response
     {
         $readerPage = PageModel::findByPk($model->jumpTo);
 

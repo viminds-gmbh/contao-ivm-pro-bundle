@@ -34,7 +34,7 @@ class IvmProFilterController extends AbstractFrontendModuleController
         $this->translator = $translator;
     }
 
-    protected function getResponse(Template $template, ModuleModel $model, Request $request): ?Response
+    protected function getResponse(Template $template, ModuleModel $model, Request $request): Response
     {
         global $objPage;
 
@@ -134,7 +134,7 @@ class IvmProFilterController extends AbstractFrontendModuleController
                     $label = $value;
             }
             $active = false;
-            if (isset($inputFilters[$thisFilterKeys[0]])) {            
+            if (isset($inputFilters[$thisFilterKeys[0]])) {
                 $checkActive = \is_array($inputFilters[$thisFilterKeys[0]]) ? $inputFilters[$thisFilterKeys[0]][0] : $inputFilters[$thisFilterKeys[0]];
                 $active = $checkActive == $urlValue;
             }
