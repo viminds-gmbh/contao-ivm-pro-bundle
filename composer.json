@@ -13,9 +13,9 @@
     "require": {
         "php": "^7.4 || ^8.0",
         "contao/core-bundle": "^5",
-        "symfony/config": "^4.4 || ^5.1",
-        "symfony/dependency-injection": "^4.4 || ^5.1",
-        "symfony/http-kernel": "^4.4 || ^5.1",
+        "symfony/config": "^4.4 || ^5.1 || ^6.4",
+        "symfony/dependency-injection": "^4.4 || ^5.1 || ^6.4",
+        "symfony/http-kernel": "^4.4 || ^5.1 || ^6.4",
         "qbus/ivm-pro-client-contao-manager-plugin": "^0.2.0"
     },
     "conflict": {
@@ -25,7 +25,7 @@
         "contao/manager-plugin": "^2.0",
         "contao/easy-coding-standard": "^3.0",
         "phpunit/phpunit": "^8.4",
-        "symfony/phpunit-bridge": "^4.4 || ^5.1"
+        "symfony/phpunit-bridge": "^4.4 || ^5.1 || ^6.4"
     },
     "extra": {
         "contao-manager-plugin": "Qbus\\IvmProBundle\\ContaoManager\\Plugin"
